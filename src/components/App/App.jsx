@@ -3,7 +3,8 @@ import { GlobalStyle } from "./GlobalStyle";
 
 import { FeedbackOptions } from "components/FeedbackOptions/FeedbackOptions";
 import { Statistics } from "components/Statistics/Statistics";
-
+import { Section } from "components/Section/Section";
+ 
 export class App extends Component {
   state = {
     good: 0,
@@ -26,20 +27,23 @@ const { good, neutral, bad } = this.state;
   
   return(   
   <div>
-    <h2>Please leave feedback</h2>
+   <Section title="Please leave feedback">
     <FeedbackOptions 
-     options={Object.keys(this.state)}
-     onLeaveFeedback={this.leaveFeedback}
-    />
+      options={Object.keys(this.state)}
+      onLeaveFeedback={this.leaveFeedback}
+     />
+   </Section>
+   <Section title="Statistics">
     <Statistics
-    good={good}
-    neutral={neutral}
-    bad={bad}
-    total={this.countTotalFeedback(this.state)}
-    positivePercentage={this.countPositiveFeedbackPercentage(this.state)}
+        good={good}
+        neutral={neutral}
+        bad={bad}
+        total={this.countTotalFeedback(this.state)}
+        positivePercentage={this.countPositiveFeedbackPercentage(this.state)}
     >
 
-    </Statistics>
+     </Statistics>
+    </Section>
     <GlobalStyle />
   </div>)
  
