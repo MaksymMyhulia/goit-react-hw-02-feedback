@@ -5,14 +5,11 @@ display: flex;
 align-items: center;
 
 margin: 0;
-padding-top: ${({theme}) => theme.space[3]}px;
-padding-bottom: ${({theme}) => theme.space[3]}px;
-padding-left: ${({theme}) => theme.space[4]}px;
-padding-right: ${({theme}) => theme.space[4]}px;
+padding: ${({theme}) => theme.space[3]}px ${({theme}) => theme.space[4]}px;
 
 border: none;
 border-radius: ${({theme}) => theme.space[2]}px;
-box-shadow: ${({theme}) => theme.shadows.a};
+box-shadow: ${({theme}) => theme.shadows.normal};
 transition: all 0.25s ease-in-out;
 color: ${({theme}) => theme.colors.text};
 cursor: pointer;

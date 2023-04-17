@@ -5,7 +5,7 @@ import { Button } from "./FeedbackButtons/FeedbackButtons.styled";
 import PropTypes, { arrayOf } from "prop-types"
 
 export const FeedbackOptions = ({options, onLeaveFeedback}) => {
-    return(
+    return (
         <ButtonList>
          {options.map(option => {
             return(
