@@ -4,6 +4,7 @@ import { GlobalStyle } from "./GlobalStyle";
 import { FeedbackOptions } from "components/FeedbackOptions/FeedbackOptions";
 import { Statistics } from "components/Statistics/Statistics";
 import { Section } from "components/Section/Section";
+import { Box } from "components/Box/Box";
  
 export class App extends Component {
   state = {
@@ -26,8 +27,9 @@ render() {
 const { good, neutral, bad } = this.state;
   
   return(   
-  <div>
-   <Section title="Please leave feedback">
+  
+<Box>
+<Section title="Please leave feedback">
     <FeedbackOptions 
       options={Object.keys(this.state)}
       onLeaveFeedback={this.leaveFeedback}
@@ -45,8 +47,7 @@ const { good, neutral, bad } = this.state;
      </Statistics>
     </Section>
     <GlobalStyle />
-  </div>)
- 
-
-  }
+</Box>
+  )
+}
 };
